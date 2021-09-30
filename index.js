@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const cors = require("cors");
+
 const EmpModel = require("./Habits");
 app.use(express.json());
-app.use(cors());
+
 
 var uri =
   "mongodb+srv://habit:habit123456@cluster0.ozepx.mongodb.net/habit?retryWrites=true&w=majority";
@@ -60,7 +60,7 @@ app.get("/insert", (req, res) => {
 
 try {
   employee.save();
-  res.send("inserdata");
+  res.send("inserted data");
 } catch (err) {
   console.log(err);
 }
